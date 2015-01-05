@@ -24,7 +24,8 @@ class Koan03 extends GroovyTestCase {
         // Have a read here: http://groovy.codehaus.org/Groovy+Beans
         GroovyPerson groovyPerson = new GroovyPerson('Harry', 'Potter', '3322')
 
-        // Explore the differences between JavaPerson and GroovyPerson and read some of the user guide above.
+        // Explore the differences between the JavaPerson.java and the GroovyPerson.groovy 
+        // files and read some of the user guide above
         // When you're done, add the necessary getters to get the respective first names
         // Hint: The reason you don't have a place to add code in Groovy is because you don't have to!
         def javaFirstName
