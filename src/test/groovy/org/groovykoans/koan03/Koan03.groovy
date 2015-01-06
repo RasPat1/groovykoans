@@ -45,15 +45,13 @@ class Koan03 extends GroovyTestCase {
 
         // Try to modify Ken's ssn. You should get a ReadOnlyPropertyException.
         def person = new GroovyPerson('Ken', 'Kousen', '7878')
-        def failed = true
+        
         shouldFail (ReadOnlyPropertyException) {
             // ------------ START EDITING HERE ----------------------
             person.ssn = '1234'
             // ------------ STOP EDITING HERE  ----------------------
-            failed = false
         }
 
-        assert failed
 
         // The code wrapping your additions verifies that the ReadOnlyProperty exception has been thrown.
         // The curly brackets ({}) represent a closure. We'll get into what that means very soon.
