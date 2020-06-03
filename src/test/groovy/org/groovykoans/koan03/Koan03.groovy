@@ -32,6 +32,7 @@ class Koan03 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         javaFirstName = javaPerson.getFirstName();
         groovyFirstName = groovyPerson.firstName
+
         // ------------ STOP EDITING HERE  ----------------------
 
         assert javaFirstName == 'Argus'
@@ -44,15 +45,16 @@ class Koan03 extends GroovyTestCase {
 
         // Try to modify Ken's ssn. You should get a ReadOnlyPropertyException.
         def person = new GroovyPerson('Ken', 'Kousen', '7878')
-        def failed = true
-        shouldFail (ReadOnlyPropertyException) {
+        // def failed = false
+        assert shouldFail (ReadOnlyPropertyException) {
             // ------------ START EDITING HERE ----------------------
-            person.ssn = '1234'
+            person.ssn = '1337'
+
             // ------------ STOP EDITING HERE  ----------------------
-            failed = false
+            // failed = true
         }
 
-        assert failed
+        // assert failed
 
         // The code wrapping your additions verifies that the ReadOnlyProperty exception has been thrown.
         // The curly brackets ({}) represent a closure. We'll get into what that means very soon.
@@ -69,7 +71,8 @@ class Koan03 extends GroovyTestCase {
         // Create a SimpleGroovyBean using named arguments, to represent a transaction with -30 as its data.
         def transaction
         // ------------ START EDITING HERE ----------------------
-        transaction = new SimpleGroovyBean(title: 'Transaction', data: -30)
+        transaction = new SimpleGroovyBean(title: 'testBean', data: -30)
+
         // ------------ STOP EDITING HERE  ----------------------
 
         assert transaction.data == -30
